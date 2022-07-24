@@ -661,7 +661,7 @@
       <!-- End Certification Section -->
 
       <!-- ======= Portfolio Section ======= -->
-      <section id="portfolio" class="portfolio section-bg">
+      <!-- <section id="portfolio" class="portfolio section-bg">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
             <h2>Portfolio</h2>
@@ -964,11 +964,11 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       <!-- End Portfolio Section -->
 
       <!-- ======= Services Section ======= -->
-      <section id="services" class="services">
+      <!-- <section id="services" class="services">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
             <h2>Services</h2>
@@ -1162,11 +1162,11 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       <!-- End Services Section -->
 
       <!-- ======= Testimonials Section ======= -->
-      <section id="testimonials" class="testimonials section-bg">
+      <!-- <section id="testimonials" class="testimonials section-bg">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
             <h2>Testimonials</h2>
@@ -1199,7 +1199,7 @@
               </div>
               <!-- End testimonial item -->
 
-              <div class="swiper-slide">
+      <!-- <div class="swiper-slide">
                 <div class="testimonial-item">
                   <img
                     src="assets/img/testimonials/testimonials-2.jpg"
@@ -1217,10 +1217,10 @@
                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                   </p>
                 </div>
-              </div>
-              <!-- End testimonial item -->
+              </div> -->
+      <!-- End testimonial item -->
 
-              <div class="swiper-slide">
+      <!-- <div class="swiper-slide">
                 <div class="testimonial-item">
                   <img
                     src="assets/img/testimonials/testimonials-3.jpg"
@@ -1237,10 +1237,10 @@
                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                   </p>
                 </div>
-              </div>
-              <!-- End testimonial item -->
+              </div> -->
+      <!-- End testimonial item -->
 
-              <div class="swiper-slide">
+      <!-- <div class="swiper-slide">
                 <div class="testimonial-item">
                   <img
                     src="assets/img/testimonials/testimonials-4.jpg"
@@ -1258,10 +1258,10 @@
                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                   </p>
                 </div>
-              </div>
-              <!-- End testimonial item -->
+              </div> -->
+      <!-- End testimonial item -->
 
-              <div class="swiper-slide">
+      <!-- <div class="swiper-slide">
                 <div class="testimonial-item">
                   <img
                     src="assets/img/testimonials/testimonials-5.jpg"
@@ -1279,13 +1279,14 @@
                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                   </p>
                 </div>
-              </div>
-              <!-- End testimonial item -->
-            </div>
+              </div> -->
+      <!-- End testimonial item -->
+      <!-- </div>
             <div class="swiper-pagination"></div>
           </div>
         </div>
-      </section>
+      </section> -->
+      -->
       <!-- End Testimonials Section -->
 
       <!-- ======= Contact Section ======= -->
@@ -1319,12 +1320,7 @@
             </div>
 
             <div class="col-lg-8 mt-5 mt-lg-0">
-              <form
-                action="forms/contact.php"
-                method="post"
-                role="form"
-                class="php-email-form"
-              >
+              <form action="" onsubmit="sendEmail();" class="php-email-form">
                 <div class="row">
                   <div class="col-md-6 form-group">
                     <input
@@ -1366,13 +1362,13 @@
                     required
                   ></textarea>
                 </div>
-                <div class="my-3">
+                <!-- <div class="my-3">
                   <div class="loading">Loading</div>
                   <div class="error-message"></div>
                   <div class="sent-message">
                     Your message has been sent. Thank you!
                   </div>
-                </div>
+                </div> -->
                 <div class="text-center">
                   <button type="submit">Send Message</button>
                 </div>
@@ -1440,6 +1436,30 @@
     <script src="assets/vendor/typed.js/typed.min.js"></script>
     <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- SendEmail -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      function sendEmail() {
+        Email.send({
+          Host: "smtp.gmail.com",
+          Username: "khunzinshine@gmail.com",
+          Password: "password",
+          To: "khunzinshine@gmail.com",
+          From: document.getElementById("email").value,
+          Subject: "New Contact form from Portfolio",
+          Body:
+            "Name: " +
+            document.getElementById("name").value +
+            "<br> Email: " +
+            document.getElementById("email").value +
+            "<br> Subject: " +
+            document.getElementById("subject").value +
+            "<br> Message: " +
+            document.getElementById("message").value,
+        });
+      }
+    </script>
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
